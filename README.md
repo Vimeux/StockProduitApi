@@ -14,6 +14,11 @@ pip install pipenv
 pipenv install
 ````
 
+### activate virtualenv
+````
+pipenv shell
+````
+
 ### Configure database
 Insert your database url in config.py, 
 project is configure for postgresSQL.
