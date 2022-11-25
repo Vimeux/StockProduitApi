@@ -35,3 +35,7 @@ flask run
 
 ### Here we go 🥳
 
+# Read the Doc :
+
+https://documenter.getpostman.com/view/17963485/2s8YsryDhf
+
