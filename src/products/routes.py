@@ -3,8 +3,11 @@ from src.models.products import Product
 
 bp = Blueprint('products', __name__)
 
+@bp.route('/', methods=['GET'])
+def home():
+    return 'Welcome to the Products API'
 
-@bp.route('/products')
+@bp.route('/products', methods=['GET'])
 def index():
     product = Product.get_product()
     return jsonify(product), 200
