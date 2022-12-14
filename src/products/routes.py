@@ -3,9 +3,11 @@ from src.models.products import Product
 
 bp = Blueprint('products', __name__)
 
+
 @bp.route('/', methods=['GET'])
 def home():
     return 'Welcome to the Products API'
+
 
 @bp.route('/products', methods=['GET'])
 def index():
@@ -13,10 +15,17 @@ def index():
     return jsonify(product), 200
 
 
+# get a single product
+@bp.route('/products/<int:productId>', methods=['GET'])
+def get_product(productId):
+    product = Product.get_product(productId)
+    return jsonify(product), 200
+
+
 @bp.route('/products/create', methods=['POST'])
 def create():
     data = request.get_json()
-    product = Product.create_product(data.get('name'), data.get('stock'))
+    product = Product.create_product(data.get('name'), data.get('stock'), data.get('code'))
     return product
 
 
